@@ -1,0 +1,262 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>MainWin</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>MainWin</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>450</width>
+            <height>356</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>QuNoteFort</string>
+    </property>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>btHide</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>370</x>
+                <y>310</y>
+                <width>71</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Hide</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+        <property name="toolTip" stdset="0">
+            <string>Hide window.</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>btNew</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>310</y>
+                <width>61</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>170</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>&amp;New</string>
+        </property>
+        <property name="accel">
+            <string>Alt+N</string>
+        </property>
+        <property name="toolTip" stdset="0">
+            <string>Create new note.</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>btDel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>310</y>
+                <width>60</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>170</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>De&amp;lete</string>
+        </property>
+        <property name="accel">
+            <string>Alt+L</string>
+        </property>
+        <property name="toolTip" stdset="0">
+            <string>Delete selected note.</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>btSave</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>250</x>
+                <y>310</y>
+                <width>103</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>127</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>S&amp;ave</string>
+        </property>
+        <property name="accel">
+            <string>Alt+A</string>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lsNotes</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>20</y>
+                <width>160</width>
+                <height>280</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <family>Bitstream Vera Sans Mono</family>
+            </font>
+        </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>txtNote</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>181</x>
+                <y>20</y>
+                <width>260</width>
+                <height>280</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <family>Luxi Sans</family>
+            </font>
+        </property>
+        <property name="acceptDrops">
+            <bool>true</bool>
+        </property>
+        <property name="tabStopWidth">
+            <number>18</number>
+        </property>
+    </widget>
+</widget>
+<toolbars>
+</toolbars>
+<connections>
+    <connection>
+        <sender>btNew</sender>
+        <signal>clicked()</signal>
+        <receiver>MainWin</receiver>
+        <slot>btNew_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>lsNotes</sender>
+        <signal>selected(QListBoxItem*)</signal>
+        <receiver>MainWin</receiver>
+        <slot>lsNotes_selected(QListBoxItem*)</slot>
+    </connection>
+    <connection>
+        <sender>lsNotes</sender>
+        <signal>highlighted(QListBoxItem*)</signal>
+        <receiver>MainWin</receiver>
+        <slot>lsNotes_highlighted(QListBoxItem*)</slot>
+    </connection>
+    <connection>
+        <sender>btSave</sender>
+        <signal>clicked()</signal>
+        <receiver>MainWin</receiver>
+        <slot>btSave_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>txtNote</sender>
+        <signal>textChanged()</signal>
+        <receiver>MainWin</receiver>
+        <slot>txtNote_textChanged()</slot>
+    </connection>
+    <connection>
+        <sender>lsNotes</sender>
+        <signal>onItem(QListBoxItem*)</signal>
+        <receiver>MainWin</receiver>
+        <slot>lsNotes_onItem(QListBoxItem*)</slot>
+    </connection>
+    <connection>
+        <sender>btDel</sender>
+        <signal>clicked()</signal>
+        <receiver>MainWin</receiver>
+        <slot>btDel_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>lsNotes</sender>
+        <signal>clicked(QListBoxItem*)</signal>
+        <receiver>MainWin</receiver>
+        <slot>lsNotes_clicked(QListBoxItem*)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">MainWin.ui.h</include>
+</includes>
+<slots>
+    <slot>btNew_clicked()</slot>
+    <slot>lsNotes_selected( QListBoxItem * )</slot>
+    <slot>lsNotes_highlighted( QListBoxItem * )</slot>
+    <slot>btSave_clicked()</slot>
+    <slot>txtNote_textChanged()</slot>
+    <slot>lsNotes_onItem( QListBoxItem * )</slot>
+    <slot>btDel_clicked()</slot>
+    <slot>lsNotes_clicked( QListBoxItem * )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
